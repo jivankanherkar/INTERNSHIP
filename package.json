@@ -1,0 +1,36 @@
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/package.json b/package.json
+new file mode 100644
+index 0000000000000000000000000000000000000000..bbeb5204192e7ac8396de3af6f5a80b94120d79c
+--- /dev/null
++++ b/package.json
+@@ -0,0 +1,26 @@
++{
++  "name": "internship-project",
++  "version": "1.0.0",
++  "description": "Full-stack internship project with portfolio, library CRUD API, and real-time chat.",
++  "main": "server.js",
++  "scripts": {
++    "start": "node server.js",
++    "dev": "nodemon server.js"
++  },
++  "keywords": [
++    "internship",
++    "portfolio",
++    "express",
++    "socket.io",
++    "full-stack"
++  ],
++  "author": "",
++  "license": "MIT",
++  "dependencies": {
++    "express": "^4.19.2",
++    "socket.io": "^4.7.5"
++  },
++  "devDependencies": {
++    "nodemon": "^3.1.4"
++  }
++}
+ 
+EOF
+)
