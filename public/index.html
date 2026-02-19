@@ -1,0 +1,138 @@
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/public/index.html b/public/index.html
+new file mode 100644
+index 0000000000000000000000000000000000000000..ababc1b2ab4ffe45ac2f6d302db2f320e9a62d6c
+--- /dev/null
++++ b/public/index.html
+@@ -0,0 +1,128 @@
++<!DOCTYPE html>
++<html lang="en">
++  <head>
++    <meta charset="UTF-8" />
++    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
++    <title>Internship Project | Full-Stack Portfolio</title>
++    <link rel="stylesheet" href="style.css" />
++  </head>
++  <body>
++    <header>
++      <nav class="navbar">
++        <h1 class="logo">DevPortfolio</h1>
++        <ul class="nav-links">
++          <li><a href="#hero">Home</a></li>
++          <li><a href="#skills">Skills</a></li>
++          <li><a href="#projects">Projects</a></li>
++          <li><a href="#library">Library API</a></li>
++          <li><a href="#chat">Chat</a></li>
++          <li><a href="#refactoring">Refactoring</a></li>
++        </ul>
++      </nav>
++    </header>
++
++    <main>
++      <section id="hero" class="hero section-card">
++        <div>
++          <h2>Hello, I'm a Full-Stack Developer</h2>
++          <p>
++            I build responsive web applications using modern frontend engineering,
++            scalable Node.js services, and real-time features.
++          </p>
++          <a href="#projects" class="btn">View My Work</a>
++        </div>
++      </section>
++
++      <section id="skills" class="section-card">
++        <h2>Skills</h2>
++        <div class="grid two-column">
++          <article>
++            <h3>Frontend</h3>
++            <p>HTML5, CSS3, JavaScript, Responsive UI Design, Accessibility</p>
++          </article>
++          <article>
++            <h3>Backend</h3>
++            <p>Node.js, Express.js, REST API Design, WebSocket (Socket.io)</p>
++          </article>
++        </div>
++      </section>
++
++      <section id="projects" class="section-card">
++        <h2>Projects</h2>
++        <div class="grid three-column">
++          <article>
++            <h3>Portfolio Website</h3>
++            <p>
++              A clean and mobile-friendly personal website that highlights skills,
++              projects, and contact details.
++            </p>
++          </article>
++          <article>
++            <h3>Library Management API</h3>
++            <p>
++              RESTful CRUD endpoints to add, retrieve, update, and delete books
++              from an in-memory dataset.
++            </p>
++          </article>
++          <article>
++            <h3>Real-Time Chat App</h3>
++            <p>
++              Socket.io-based instant messaging between connected clients with
++              live updates.
++            </p>
++          </article>
++        </div>
++      </section>
++
++      <section id="library" class="section-card">
++        <h2>Library API Demo</h2>
++        <form id="book-form" class="inline-form">
++          <input type="text" id="title" placeholder="Book title" required />
++          <input type="text" id="author" placeholder="Author" required />
++          <input type="number" id="year" placeholder="Year" min="0" />
++          <button type="submit" class="btn">Add Book</button>
++        </form>
++        <p id="api-feedback" class="feedback"></p>
++        <div id="book-list" class="list"></div>
++      </section>
++
++      <section id="chat" class="section-card">
++        <h2>Real-Time Chat</h2>
++        <form id="chat-form" class="inline-form">
++          <input type="text" id="chat-user" placeholder="Your name" required />
++          <input type="text" id="chat-input" placeholder="Type a message" required />
++          <button type="submit" class="btn">Send</button>
++        </form>
++        <div id="chat-messages" class="chat-box"></div>
++      </section>
++
++      <section id="refactoring" class="section-card">
++        <h2>Code Refactoring Report</h2>
++        <ul>
++          <li>
++            Split concerns into clear backend and frontend modules for better
++            maintainability.
++          </li>
++          <li>
++            Added reusable utility functions for rendering books and chat
++            messages.
++          </li>
++          <li>
++            Improved error handling for all asynchronous API calls.
++          </li>
++          <li>
++            Introduced semantic HTML sections and responsive layout grid for
++            readability and accessibility.
++          </li>
++        </ul>
++      </section>
++    </main>
++
++    <footer>
++      <p>© 2026 Internship Project. Built with Node.js, Express, and Socket.io.</p>
++    </footer>
++
++    <script src="/socket.io/socket.io.js"></script>
++    <script src="script.js"></script>
++  </body>
++</html>
+ 
+EOF
+)
